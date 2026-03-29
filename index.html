@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Catálogo de pines únicos creados con pasión en la universidad. Diseños de anime, música, arte, humor y personalizados." />
+  <meta name="keywords" content="pines, pin, colección, arte, anime, música, humor, universidad" />
+  <meta name="author" content="Pin Catalog" />
+  <title>Pin Catalog | Colección de Pines Únicos</title>
+
+  <!-- Google Fonts: Poppins + Raleway -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- ===================== HEADER / NAVEGACIÓN ===================== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <div class="header__brand">
+        <span class="header__logo-icon">📍</span>
+        <span class="header__logo-text">Pin Catalog</span>
+      </div>
+      <nav class="header__nav" id="mainNav" aria-label="Navegación principal">
+        <ul class="header__nav-list">
+          <li><a href="#inicio" class="header__nav-link">Inicio</a></li>
+          <li><a href="#catalogo" class="header__nav-link">Catálogo</a></li>
+          <li><a href="#nosotros" class="header__nav-link">Sobre Nosotros</a></li>
+          <li><a href="#contacto" class="header__nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+      <button class="header__menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===================== HERO SECTION ===================== -->
+  <section class="hero" id="inicio" aria-label="Banner principal">
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <h1 class="hero__title">COLECCIÓN DE PINES</h1>
+      <p class="hero__subtitle">Diseños únicos, creados con pasión en la universidad</p>
+      <a href="#catalogo" class="btn btn--coral btn--lg hero__cta">Explorar Catálogo</a>
+    </div>
+  </section>
+
+  <!-- ===================== SECCIÓN FILTROS ===================== -->
+  <section class="filters" id="catalogo" aria-label="Filtros de categoría">
+    <div class="container">
+      <h2 class="filters__title">Nuestros Pines</h2>
+      <div class="filters__buttons" role="group" aria-label="Filtrar por categoría">
+        <button class="filter-btn filter-btn--active" data-filter="todos" aria-pressed="true">Todos</button>
+        <button class="filter-btn" data-filter="anime" aria-pressed="false">Anime</button>
+        <button class="filter-btn" data-filter="musica" aria-pressed="false">Música</button>
+        <button class="filter-btn" data-filter="arte" aria-pressed="false">Arte</button>
+        <button class="filter-btn" data-filter="humor" aria-pressed="false">Humor</button>
+        <button class="filter-btn" data-filter="personalizado" aria-pressed="false">Personalizado</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GRID DE PINES ===================== -->
+  <main class="catalog" aria-label="Catálogo de pines">
+    <div class="container">
+      <div class="pins-grid" id="pinsGrid">
+        <!-- Las cards se generan dinámicamente desde main.js -->
+      </div>
+      <p class="catalog__empty" id="emptyMsg" hidden>No hay pines en esta categoría.</p>
+    </div>
+  </main>
+
+  <!-- ===================== SECCIÓN SOBRE NOSOTROS ===================== -->
+  <section class="about" id="nosotros" aria-label="Sobre nosotros">
+    <div class="container about__inner">
+      <div class="about__text">
+        <h2 class="about__title">Sobre Nosotros</h2>
+        <p>Somos un grupo de estudiantes universitarios apasionados por el diseño y la cultura pop. Cada pin es creado a mano con amor, cuidando cada detalle para que sea verdaderamente único.</p>
+        <p>Nuestros pines son de alta calidad, con esmalte brillante o mate, y están diseñados para durar toda la vida. ¡Perfectos para mochilas, chaquetas, gorras y más!</p>
+      </div>
+      <div class="about__stats">
+        <div class="about__stat">
+          <span class="about__stat-number">50+</span>
+          <span class="about__stat-label">Diseños</span>
+        </div>
+        <div class="about__stat">
+          <span class="about__stat-number">200+</span>
+          <span class="about__stat-label">Clientes felices</span>
+        </div>
+        <div class="about__stat">
+          <span class="about__stat-number">100%</span>
+          <span class="about__stat-label">Hecho a mano</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SECCIÓN CONTACTO ===================== -->
+  <section class="contact" id="contacto" aria-label="Contacto">
+    <div class="container">
+      <h2 class="contact__title">Contáctanos</h2>
+      <p class="contact__subtitle">¿Quieres un pin personalizado o tienes alguna duda? ¡Escríbenos!</p>
+      <form class="contact__form" id="contactForm" novalidate>
+        <div class="form-group">
+          <label for="contactName">Nombre</label>
+          <input type="text" id="contactName" name="name" placeholder="Tu nombre" required />
+        </div>
+        <div class="form-group">
+          <label for="contactEmail">Correo electrónico</label>
+          <input type="email" id="contactEmail" name="email" placeholder="tu@correo.com" required />
+        </div>
+        <div class="form-group">
+          <label for="contactMessage">Mensaje</label>
+          <textarea id="contactMessage" name="message" rows="5" placeholder="Cuéntanos sobre tu pin soñado..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn--coral btn--lg">Enviar Mensaje</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" aria-label="Pie de página">
+    <div class="container footer__inner">
+      <div class="footer__col">
+        <h3 class="footer__heading">📍 Pin Catalog</h3>
+        <p>Pines únicos creados con pasión en la universidad. Cada diseño cuenta una historia.</p>
+      </div>
+      <div class="footer__col">
+        <h3 class="footer__heading">Enlaces Rápidos</h3>
+        <ul class="footer__links">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#catalogo">Catálogo</a></li>
+          <li><a href="#nosotros">Sobre Nosotros</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h3 class="footer__heading">Redes Sociales</h3>
+        <ul class="footer__links footer__social">
+          <li><a href="#" aria-label="Instagram">📸 Instagram</a></li>
+          <li><a href="#" aria-label="TikTok">🎵 TikTok</a></li>
+          <li><a href="#" aria-label="Twitter">🐦 Twitter</a></li>
+          <li><a href="#" aria-label="WhatsApp">💬 WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; <span id="footerYear"></span> Pin Catalog. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- ===================== MODAL DETALLE DEL PIN ===================== -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalPinName" hidden>
+    <div class="modal">
+      <button class="modal__close" id="modalClose" aria-label="Cerrar modal">
+        <img src="assets/icons/close.svg" alt="" width="20" height="20" />
+      </button>
+      <div class="modal__content">
+        <div class="modal__image-wrap">
+          <img class="modal__image" id="modalImage" src="" alt="" />
+        </div>
+        <div class="modal__info">
+          <span class="modal__category" id="modalCategory"></span>
+          <h2 class="modal__name" id="modalPinName"></h2>
+          <p class="modal__description" id="modalDescription"></p>
+          <ul class="modal__specs" id="modalSpecs" aria-label="Especificaciones"></ul>
+          <p class="modal__price" id="modalPrice"></p>
+          <div class="modal__actions">
+            <button class="btn btn--coral" id="modalAddCart">Añadir al Carrito</button>
+            <button class="btn btn--pine" id="modalShare">Compartir</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== CARRITO FLOTANTE ===================== -->
+  <button class="cart-fab" id="cartFab" aria-label="Abrir carrito">
+    <img src="assets/icons/cart.svg" alt="" width="26" height="26" />
+    <span class="cart-fab__badge" id="cartBadge" hidden>0</span>
+  </button>
+
+  <!-- Panel del Carrito -->
+  <aside class="cart-panel" id="cartPanel" aria-label="Carrito de compras" hidden>
+    <div class="cart-panel__header">
+      <h2 class="cart-panel__title">🛒 Tu Carrito</h2>
+      <button class="cart-panel__close" id="cartClose" aria-label="Cerrar carrito">
+        <img src="assets/icons/close.svg" alt="" width="18" height="18" />
+      </button>
+    </div>
+    <div class="cart-panel__items" id="cartItems">
+      <p class="cart-panel__empty">Tu carrito está vacío.</p>
+    </div>
+    <div class="cart-panel__footer">
+      <p class="cart-panel__total">Total: <span id="cartTotal">$0.00</span></p>
+      <button class="btn btn--pine btn--full" id="cartRequest">Solicitar Pedido</button>
+    </div>
+  </aside>
+  <div class="cart-backdrop" id="cartBackdrop" hidden></div>
+
+  <!-- ===================== SCRIPTS ===================== -->
+  <script src="js/main.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>
